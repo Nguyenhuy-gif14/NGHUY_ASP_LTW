@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Bảng Cửu Chương";
+    // Thay "Họ tên của bạn" bằng tên của bạn
+    string yourName = "Nguyễn Trường Huy";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<h2>Bảng Cửu Chương - By: @yourName</h2>
+
+<table border="1">
+    @for (int i = 2; i <= 10; i++)
+    {
+        <tr>
+            @for (int j = 1; j <= 10; j++)
+            {
+                <td>@i x @j = @(i * j)</td>
+            }
+        </tr>
+    }
+</table>
