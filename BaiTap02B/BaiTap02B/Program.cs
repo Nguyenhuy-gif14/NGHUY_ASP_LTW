@@ -33,6 +33,10 @@ app.MapControllerRoute(
     name: "trang-chu",
     pattern: "trang-chu/{action=Index}/{id?}",
     defaults: new { controller = "Home", action = "Index" });
+app.MapControllerRoute(
+    name: "trang-chinh",
+    pattern: "trang-chinh",
+    defaults: new { controller = "Home", action = "Index" });
 
 
 app.Run();
