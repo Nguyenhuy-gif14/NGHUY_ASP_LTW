@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "DangKy";
+}
+@model TaiKhoanViewModel
+<h1>Đăng Ký Tài Khoản</h1>
+
+<form asp-action="DangKy" method="post">
+    <div>
+        <label>Tên tài khoản:</label>
+        <input type="text" asp-for="TenTaiKhoan" />
+        <span asp-validation-for="TenTaiKhoan" class="text-danger"></span>
+    </div>
+    <div>
+        <label>Mật khẩu:</label>
+        <input type="password" asp-for="MatKhau" />
+        <span asp-validation-for="MatKhau" class="text-danger"></span>
+    </div>
+    <div>
+        <label>Họ tên:</label>
+        <input type="text" asp-for="HoTen" />
+        <span asp-validation-for="HoTen" class="text-danger"></span>
+    </div>
+    <div>
+        <label>Tuổi:</label>
+        <input type="number" asp-for="Tuoi" />
+        <span asp-validation-for="Tuoi" class="text-danger"></span>
+    </div>
+    <button type="submit">Đăng ký</button>
+</form>
+<hr />
+@if (Model.TenTaiKhoan != null && Model.TenTaiKhoan.Length > 0)
+{
+    <h3>Thông tin đã nhập: </h3>
+    <p>TenTaiKhoan: @Model.TenTaiKhoan</p>
+    <p>Password: @Model.MatKhau</p>
+}
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
