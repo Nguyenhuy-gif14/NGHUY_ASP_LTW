@@ -24,10 +24,10 @@ namespace BaiTap07.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Create(Thread theloai)
+        public IActionResult Create(TheLoai theloai)
         {
             //thêm vào nbangr Theloai
-            _ = _db.TheLoais.Add(theloai);
+            _db.TheLoais.Add(theloai);
             //lưu
             _db.SaveChanges();
             return View();
