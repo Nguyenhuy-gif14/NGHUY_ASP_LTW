@@ -6,8 +6,11 @@ namespace BaiTap07.Models
     {
         [Key]
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Khong duoc de trong ten tuoi!")]
+        [Display(Name="Thể Loại")]
         public string Name { get; set; }
+        [Required(ErrorMessage ="Không đúng định dạng ngày tháng năm!")]
+        [Display(Name ="Ngày Tạo")]
         public DateTime DateCreated { get; set; } = DateTime.Now;
 
     }
