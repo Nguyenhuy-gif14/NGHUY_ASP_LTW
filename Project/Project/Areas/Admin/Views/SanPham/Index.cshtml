@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@model IEnumerable<SanPham>
+
+<div class="container">
+    <table class="table">
+    </table>
+    <thead>
+        <tr>
+        <th>Tên Sản Phẩm</th>
+        <th>Mô Tả</th>
+        <th>Gía Tiền</th>
+        <th>Hình ảnh</th>
+        <th>Tên Thể Loại</th>
+        <th>Chức Năng</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>@item.price</td>
+                <td>@item src="@item.ImageUrl" width="50px"/></td>
+                <td>@item.TheLoai.Name</td>
+
+                <td>
+                    <a asp-action="Upsert"  asp-route-id="@item.Id">Edit</a> |
+                    <a href="#" >Details</a> |
+                    <a href="#"> Deleta</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    </table>
+
+    <a asp-controller="SanPham" asp-action="Upsert" class="btn btn-primary">Thêm Mới</a>
+</div>

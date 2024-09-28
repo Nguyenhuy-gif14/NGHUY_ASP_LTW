@@ -91,14 +91,10 @@ namespace BaiTap07.Controllers
         [HttpGet]
         public IActionResult Details(int id)
         {
-            if (id == 0)
-            {
-                return NotFound();
-            }
 
             var theloai = _db.TheLoais.Find(id);
 
-            if (theloai == null)
+            if (id == 0)
             {
                 return NotFound();
             }
@@ -106,15 +102,25 @@ namespace BaiTap07.Controllers
             return View(theloai);
         }
 
-        [HttpPost]
-        public IActionResult DetailsConfirm(int Id)
+        [HttpGet]
+        public IActionResult Search(string searchString)
         {
-            var theloai = _db.TheLoais.Find(Id);
-            if (theloai == null)
+            if (!string.IsNullOrEmpty(searchString))
             {
-                return NotFound();
+                //sử dung LINQ để tìm kiếm
+                var theLoai = _db.TheLoais.
+                    Where(tl => tl.Name.Contains(searchString)).ToList();
+
+                ViewBag.SearchString = searchString;
+                ViewBag.TheLoai = theLoai;
+               
             }
-            return RedirectToAction("Details", new {id = Id });
+            else
+            {
+                var theLoai = _db.TheLoais.ToList();
+                ViewBag.TheLoai = theLoai;
+            }    
+            return View("Index"); // SD lại view index
         }
     }
 }
