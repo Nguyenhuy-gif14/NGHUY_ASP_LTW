@@ -13,5 +13,6 @@ namespace Project.Data
 
         public DbSet<TheLoai> theLoais { get; set; }
         public DbSet<SanPham> sanPhams { get; set; }
+        public DbSet<ApplicationUser> applicationUser { get; set; } 
     }
 }

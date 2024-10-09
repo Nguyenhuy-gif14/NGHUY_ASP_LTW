@@ -1,4 +1,5 @@
 ﻿
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -7,33 +8,32 @@
 
 @model IEnumerable<SanPham>
 
-<div class="container">
-    <table class="table">
-    </table>
-    <thead>
-        <tr>
-        <th>Tên Sản Phẩm</th>
-        <th>Mô Tả</th>
-        <th>Gía Tiền</th>
-        <th>Hình ảnh</th>
-        <th>Tên Thể Loại</th>
-        <th>Chức Năng</th>
-        </tr>
-    </thead>
+    <div class="table">
+        <table>
+        <thead>
+            <tr>
+            <th>Tên Sản Phẩm</th>
+            <th>Mô Tả</th>
+            <th>Gía Tiền</th>
+            <th>Hình ảnh</th>
+            <th>Tên Thể Loại</th>
+            <th>Chức Năng</th>
+            </tr>
+        </thead>
     <tbody>
-        @foreach(var item in Model)
+        @foreach (var item in Model)
         {
             <tr>
                 <td>@item.Name</td>
                 <td>@item.Description</td>
                 <td>@item.price</td>
-                <td>@item src="@item.ImageUrl" width="50px"/></td>
+                <td><img src="@item.ImageUrl" width="70px" /></td>
                 <td>@item.TheLoai.Name</td>
 
                 <td>
-                    <a asp-action="Upsert"  asp-route-id="@item.Id">Edit</a> |
-                    <a href="#" >Details</a> |
-                    <a href="#"> Deleta</a>
+                    <a asp-action="Upsert" asp-route-id="@item.Id">Edit</a>|
+                    <a href="#">Details</a>|
+                    <a href="#" onclick=" confirmDelete(@item.Id, $(this))"> Delete</a>
                 </td>
             </tr>
         }
@@ -42,3 +42,22 @@
 
     <a asp-controller="SanPham" asp-action="Upsert" class="btn btn-primary">Thêm Mới</a>
 </div>
+
+
+<script>
+    function confirmDelete(id, row) {
+        if (confirm("Bạn có chắc muốn xóa sản phẩm có id là" + id + "?")) {
+            xoa(id, $(row))
+        }
+    }
+    function xoa(idx, row) {
+        $.ajax({
+            url: `SanPham/Delete`,  // Truoc so 1 ben duoi nut ESC
+            data: { id: idx },
+            type: "POST",
+            success: function (data) {
+                row.closest("tr").remove();
+            }
+        })
+    }
+</script>
