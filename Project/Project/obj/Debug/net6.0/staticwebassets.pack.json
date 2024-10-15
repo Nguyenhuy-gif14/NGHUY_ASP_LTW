@@ -13,6 +13,34 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\laptrinhweb-ASP\\NGHUY_ASP_LTW\\Project\\Project\\wwwroot\\images\\apple.jpg",
+      "PackagePath": "staticwebassets\\images\\apple.jpg"
+    },
+    {
+      "Id": "C:\\laptrinhweb-ASP\\NGHUY_ASP_LTW\\Project\\Project\\wwwroot\\images\\gg.jpg",
+      "PackagePath": "staticwebassets\\images\\gg.jpg"
+    },
+    {
+      "Id": "C:\\laptrinhweb-ASP\\NGHUY_ASP_LTW\\Project\\Project\\wwwroot\\images\\huawei.jpg",
+      "PackagePath": "staticwebassets\\images\\huawei.jpg"
+    },
+    {
+      "Id": "C:\\laptrinhweb-ASP\\NGHUY_ASP_LTW\\Project\\Project\\wwwroot\\images\\mi.jpg",
+      "PackagePath": "staticwebassets\\images\\mi.jpg"
+    },
+    {
+      "Id": "C:\\laptrinhweb-ASP\\NGHUY_ASP_LTW\\Project\\Project\\wwwroot\\images\\oppo.jpg",
+      "PackagePath": "staticwebassets\\images\\oppo.jpg"
+    },
+    {
+      "Id": "C:\\laptrinhweb-ASP\\NGHUY_ASP_LTW\\Project\\Project\\wwwroot\\images\\payments.png",
+      "PackagePath": "staticwebassets\\images\\payments.png"
+    },
+    {
+      "Id": "C:\\laptrinhweb-ASP\\NGHUY_ASP_LTW\\Project\\Project\\wwwroot\\images\\samsung.jpg",
+      "PackagePath": "staticwebassets\\images\\samsung.jpg"
+    },
+    {
       "Id": "C:\\laptrinhweb-ASP\\NGHUY_ASP_LTW\\Project\\Project\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

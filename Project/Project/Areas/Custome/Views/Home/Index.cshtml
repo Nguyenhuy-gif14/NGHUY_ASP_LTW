@@ -1,19 +1,4 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
-
-
-
-
-
-@{
-    ViewData["Title"] = "Index";
-}
+﻿
 
 
 @model IEnumerable<SanPham>
@@ -21,11 +6,13 @@
 <div class="row">
     @foreach (var item in @Model)
     {
+
         <div class="col-3 p-3">
             <div class="card h-100 d-flex flex-column" style="width: 18rem; min-height: 500px;">
-                <img src="@item.ImageUrl" class="card-img-top" alt="@item.Name" style="height: 200px;object-fit:cover;">
+                <a asp-action="Details" asp-route-id="@item.Id">
+                    <img src="@item.ImageUrl" class="card-img-top" alt="@item.Name" style="height: 200px;object-fit:cover;">
+                </a>
                 <div class="card-body">
-                    
                     <h5 class="card-title">@item.Name</h5>
                     @{
                         string Price = @item.price.ToString("#,0", System.Globalization.CultureInfo.GetCultureInfo("vi-VN"));

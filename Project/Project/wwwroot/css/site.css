@@ -16,3 +16,71 @@ html {
 body {
   margin-bottom: 60px;
 }
+.owl-carousel .bg-light {
+    display: inline-block;
+    width: 120px; /* Kích th??c nh? h?n */
+    margin-right: 10px; /* Kho?ng cách gi?a các hình */
+}
+
+.owl-carousel img {
+    width: 100%; /* ?i?u ch?nh hình ?nh phù h?p v?i khung */
+    height: auto; /* Gi? t? l? hình ?nh */
+}
+
+.vendor-carousel {
+    display: flex; /* ?? các ph?n t? n?m trên cùng 1 hàng */
+    justify-content: space-around; /* Canh ??u các hình ?nh */
+}
+
+.container-fluid {
+    overflow: hidden; /* ?? tránh tràn ra ngoài container */
+}
+.btn-square {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+/* Hi?u ?ng n?i lên khi hover */
+.social-icon {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .social-icon:hover {
+        transform: translateY(-5px); /* Hi?u ?ng n?i lên */
+        box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); /* Bóng ?? thêm n?i b?t */
+    }
+
+    .social-icon i {
+        transition: color 0.3s ease;
+    }
+
+    /* Thay ??i màu khi hover */
+    .social-icon:hover i {
+        color: #fff;
+    }
+
+    /* Màu n?n cho t?ng icon */
+    .social-icon:hover {
+        background-color: #1da1f2; /* Twitter màu xanh nh?t */
+    }
+
+    .social-icon:nth-child(2):hover {
+        background-color: #3b5998; /* Facebook màu xanh ??m */
+    }
+
+    .social-icon:nth-child(3):hover {
+        background-color: #0077b5; /* LinkedIn màu xanh d??ng */
+    }
+
+    .social-icon:nth-child(4):hover {
+        background-color: #e4405f; /* Instagram màu ?? t??i */
+    }
